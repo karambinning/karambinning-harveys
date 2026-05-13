@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Harvey's — Hairdressers in Luton since 1973</title>
+<meta name="description" content="Harvey's of Eaton Green Road. A Luton hair salon serving classics and contemporary techniques since 1973. 01582 725193.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #131E2E;
+    --ink-soft: #2A3447;
+    --paper: #F2EBDD;
+    --paper-warm: #E8DDC6;
+    --brass: #B6873A;
+    --brass-deep: #8E6A2C;
+    --rule: rgba(19, 30, 46, 0.18);
+    --display: "DM Serif Display", "Hoefler Text", Georgia, serif;
+    --sans: "DM Sans", system-ui, -apple-system, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.075rem);
+    line-height: 1.55;
+    font-feature-settings: "ss01", "kern";
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* paper grain */
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.92' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.07 0 0 0 0 0.11 0 0 0 0 0.18 0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    opacity: 0.06;
+    mix-blend-mode: multiply;
+    z-index: 100;
+  }
+
+  a { color: inherit; }
+
+  h1, h2, h3 { text-wrap: balance; margin: 0; font-family: var(--display); font-weight: 400; letter-spacing: -0.012em; }
+  p  { text-wrap: pretty; hyphens: auto; margin: 0; }
+
+  .wrap { max-width: 84rem; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 3rem); }
+
+  /* ───────────── top bar ───────────── */
+  .top {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(242, 235, 221, 0.92);
+    backdrop-filter: saturate(140%) blur(6px);
+    -webkit-backdrop-filter: saturate(140%) blur(6px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .top__inner {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 1rem; padding: 0.85rem 0;
+    font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .top__mark {
+    font-family: var(--display);
+    font-size: 1.15rem;
+    letter-spacing: -0.005em;
+    text-transform: none;
+  }
+  .top__mark i { color: var(--brass-deep); font-style: italic; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; margin-left: 0.45rem; vertical-align: 0.18em; }
+  .top__phone { color: var(--ink); text-decoration: none; }
+  .top__phone:hover { color: var(--brass-deep); }
+  .top__status { display: inline-flex; align-items: center; gap: 0.45rem; }
+  .top__dot { width: 0.5rem; height: 0.5rem; border-radius: 999px; background: var(--brass); display: inline-block; }
+  .top__dot.is-open { background: #2F7D55; }
+  .top__hide-sm { display: none; }
+  @media (min-width: 48rem) { .top__hide-sm { display: inline-flex; } }
+
+  /* ───────────── hero ───────────── */
+  .hero {
+    padding: clamp(2.5rem, 7vw, 7rem) 0 clamp(2rem, 5vw, 4rem);
+    position: relative;
+  }
+  .hero__eyebrow {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1.25rem; align-items: center;
+    font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: clamp(1.5rem, 4vw, 3rem);
+  }
+  .hero__eyebrow::before, .hero__eyebrow span.rule { content: ""; height: 1px; background: var(--rule); display: block; }
+  .hero__eyebrow span.rule { width: 100%; }
+
+  .hero__mark {
+    font-family: var(--display);
+    font-size: clamp(4.5rem, 22vw, 18rem);
+    line-height: 0.88;
+    letter-spacing: -0.045em;
+    margin: 0;
+    position: relative;
+  }
+  .hero__mark .apostrophe {
+    color: var(--brass-deep);
+    font-style: italic;
+  }
+  .hero__sub {
+    margin-top: clamp(1.25rem, 3vw, 2rem);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 52rem) {
+    .hero__sub { grid-template-columns: 1.4fr 1fr; align-items: end; }
+  }
+  .hero__lede {
+    font-family: var(--display);
+    font-size: clamp(1.45rem, 2.2vw + 0.6rem, 2.4rem);
+    line-height: 1.18;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    max-width: 28ch;
+  }
+  .hero__lede em { color: var(--brass-deep); font-style: italic; }
+  .hero__meta {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+    line-height: 1.65;
+  }
+  .hero__meta a { text-decoration: none; border-bottom: 1px solid var(--brass); padding-bottom: 1px; }
+  .hero__meta a:hover { color: var(--brass-deep); }
+
+  /* ───────────── marquee ───────────── */
+  .marquee {
+    margin-top: clamp(2rem, 5vw, 4rem);
+    overflow: hidden;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper-warm);
+    --speed: 48s;
+  }
+  .marquee__track {
+    display: inline-flex; gap: 3.5rem;
+    white-space: nowrap;
+    padding: 1.05rem 0;
+    animation: scroll var(--speed) linear infinite;
+    font-family: var(--display);
+    font-size: clamp(1.05rem, 1.5vw + 0.5rem, 1.75rem);
+    color: var(--ink);
+  }
+  .marquee__track span { display: inline-flex; align-items: center; gap: 0.75rem; }
+  .marquee__track span::after {
+    content: "✦";
+    color: var(--brass-deep);
+    font-size: 0.75em;
+    transform: translateY(-0.05em);
+  }
+  @keyframes scroll { to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee__track { animation: none; }
+  }
+
+  /* ───────────── section common ───────────── */
+  section { padding: clamp(3rem, 7vw, 6rem) 0; }
+  .section-title {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1.25rem;
+    align-items: baseline;
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.85rem;
+    margin-bottom: clamp(1.75rem, 3vw, 2.75rem);
+  }
+  .section-title em { font-family: var(--display); font-style: italic; text-transform: none; letter-spacing: 0; font-size: 1.1rem; color: var(--ink); }
+
+  /* ───────────── services ───────────── */
+  .services {
+    background: var(--paper);
+  }
+  .services__intro {
+    display: grid; grid-template-columns: 1fr; gap: 2rem;
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+  }
+  @media (min-width: 56rem) {
+    .services__intro { grid-template-columns: 1.05fr 1fr; gap: 4rem; }
+  }
+  .services__headline {
+    font-family: var(--display);
+    font-size: clamp(2.25rem, 5vw + 0.5rem, 4.5rem);
+    line-height: 1;
+    letter-spacing: -0.025em;
+  }
+  .services__headline em { color: var(--brass-deep); font-style: italic; }
+  .services__copy {
+    font-size: 1.025rem;
+    color: var(--ink-soft);
+    max-width: 38ch;
+    align-self: end;
+  }
+
+  .menu { list-style: none; padding: 0; margin: 0; }
+  .menu li {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem; align-items: baseline;
+    padding: 1.1rem 0;
+    border-top: 1px solid var(--rule);
+    font-family: var(--display);
+    font-size: clamp(1.4rem, 1.6vw + 0.75rem, 2.1rem);
+    line-height: 1.1;
+  }
+  .menu li:last-child { border-bottom: 1px solid var(--rule); }
+  .menu .num {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    color: var(--brass-deep);
+    text-transform: uppercase;
+    transform: translateY(-0.35em);
+    width: 2.5rem;
+  }
+  .menu .dots {
+    border-bottom: 1px dotted var(--rule);
+    align-self: end;
+    margin: 0 0.4rem 0.4rem;
+    height: 0;
+  }
+  .menu .tag {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    transform: translateY(-0.45em);
+  }
+
+  @supports (animation-timeline: view()) {
+    .menu li {
+      animation: rise both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 25%;
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(1.25rem); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  }
+
+  .menu__foot {
+    margin-top: 1.5rem;
+    font-size: 0.875rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  /* ───────────── story ───────────── */
+  .story {
+    background: var(--ink);
+    color: var(--paper);
+    position: relative;
+  }
+  .story .section-title { color: rgba(242, 235, 221, 0.65); border-color: rgba(242, 235, 221, 0.18); }
+  .story .section-title em { color: var(--paper); }
+  .story__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  @media (min-width: 60rem) {
+    .story__grid { grid-template-columns: 1fr 1.1fr; gap: 6rem; }
+  }
+  .story__year {
+    font-family: var(--display);
+    font-size: clamp(7rem, 18vw, 18rem);
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    color: var(--paper);
+    margin: 0;
+  }
+  .story__year sup { font-size: 0.18em; color: var(--brass); letter-spacing: 0.2em; font-family: var(--sans); vertical-align: 1.6em; margin-left: 0.5rem; font-weight: 500; }
+  .story__caption {
+    margin-top: 1rem;
+    font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: rgba(242, 235, 221, 0.6);
+  }
+  .story__body {
+    font-family: var(--display);
+    font-size: clamp(1.35rem, 1.5vw + 0.65rem, 1.95rem);
+    line-height: 1.35;
+    letter-spacing: -0.005em;
+    color: var(--paper);
+  }
+  .story__body em { color: var(--brass); font-style: italic; }
+  .story__notes {
+    margin-top: 2rem;
+    display: grid; gap: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+    font-size: 0.85rem;
+    color: rgba(242, 235, 221, 0.75);
+    line-height: 1.6;
+  }
+  .story__notes strong { display: block; font-family: var(--display); font-weight: 400; color: var(--paper); font-size: 1.05rem; letter-spacing: 0; margin-bottom: 0.25rem; }
+
+  /* ───────────── visit / letterhead ───────────── */
+  .visit { background: var(--paper-warm); }
+  .visit__grid {
+    display: grid; gap: 3rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 60rem) {
+    .visit__grid { grid-template-columns: 1.1fr 0.9fr; gap: 5rem; align-items: start; }
+  }
+  .letterhead {
+    font-family: var(--display);
+    font-size: clamp(1.5rem, 1.8vw + 0.75rem, 2.4rem);
+    line-height: 1.25;
+    letter-spacing: -0.012em;
+  }
+  .letterhead .line-light { color: var(--ink-soft); }
+  .letterhead a { text-decoration: none; border-bottom: 1px solid var(--brass); padding-bottom: 2px; }
+  .letterhead a:hover { color: var(--brass-deep); }
+
+  .hours { list-style: none; padding: 0; margin: 0; }
+  .hours li {
+    display: grid;
+    grid-template-columns: 9rem 1fr auto;
+    gap: 1rem; align-items: baseline;
+    padding: 0.7rem 0;
+    border-bottom: 1px dotted var(--rule);
+    font-size: 0.95rem;
+  }
+  .hours li:first-child { border-top: 1px dotted var(--rule); }
+  .hours .day { font-family: var(--display); font-size: 1.2rem; letter-spacing: -0.005em; }
+  .hours .dots { border-bottom: 1px dotted var(--rule); align-self: end; margin: 0 0.4rem 0.55rem; height: 0; }
+  .hours .time { font-variant-numeric: tabular-nums; letter-spacing: 0.02em; color: var(--ink-soft); }
+  .hours li.closed .time { color: var(--brass-deep); font-style: italic; }
+  .hours li.today { background: var(--paper); margin: 0 -0.85rem; padding-left: 0.85rem; padding-right: 0.85rem; }
+  .hours li.today .day::after {
+    content: "today";
+    display: inline-block;
+    margin-left: 0.6rem;
+    font-family: var(--sans);
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--brass-deep);
+    transform: translateY(-0.2em);
+  }
+
+  /* ───────────── footer ───────────── */
+  footer {
+    background: var(--ink);
+    color: rgba(242, 235, 221, 0.7);
+    padding: 3rem 0 2rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+  }
+  footer .wrap { display: grid; gap: 1.25rem; }
+  @media (min-width: 48rem) {
+    footer .wrap { grid-template-columns: 1fr auto; align-items: end; }
+  }
+  footer .mark {
+    font-family: var(--display);
+    font-size: 1.6rem;
+    color: var(--paper);
+    letter-spacing: -0.01em;
+  }
+  footer .mark i { color: var(--brass); font-style: italic; font-size: 0.55em; letter-spacing: 0.18em; text-transform: uppercase; margin-left: 0.5rem; }
+  footer .meta { line-height: 1.7; }
+  footer a { color: var(--paper); text-decoration: none; }
+  footer a:hover { color: var(--brass); }
+
+  ::selection { background: var(--brass); color: var(--ink); }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top__inner">
+    <a class="top__mark" href="#top" aria-label="Harvey's Hairdressers">Harvey<span style="color:var(--brass-deep)">’</span>s <i>Est. 1973</i></a>
+    <span class="top__status top__hide-sm" aria-live="polite">
+      <span class="top__dot" id="dot"></span>
+      <span id="status">Eaton Green Road · LU2 9HB</span>
+    </span>
+    <a class="top__phone" href="tel:+441582725193" aria-label="Call Harvey's on 01582 725193">01582 725193</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ───────── hero ───────── -->
+  <section class="hero">
+    <div class="wrap">
+
+      <div class="hero__eyebrow">
+        <span>Luton · LU2</span>
+        <span class="rule"></span>
+        <span>Est. MCMLXXIII</span>
+      </div>
+
+      <h1 class="hero__mark">Harvey<span class="apostrophe">’</span>s</h1>
+
+      <div class="hero__sub">
+        <p class="hero__lede">
+          The experienced hairdressers in Luton — serving the <em>classics</em> and the industry's latest techniques on Eaton Green Road since 1973.
+        </p>
+        <p class="hero__meta">
+          11 Eaton Green Road, Luton LU2&nbsp;9HB<br>
+          <a href="tel:+441582725193">01582 725193</a> &nbsp;·&nbsp;
+          <a href="mailto:harveyshairdressers@gmail.com">harveyshairdressers@gmail.com</a>
+        </p>
+      </div>
+
+    </div>
+
+    <!-- marquee strip -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Cuts</span><span>Blow-dries</span><span>Colour</span><span>Regrowth</span><span>Established 1973</span><span>Eaton Green Road</span><span>Luton LU2 9HB</span><span>01582 725193</span>
+        <span>Cuts</span><span>Blow-dries</span><span>Colour</span><span>Regrowth</span><span>Established 1973</span><span>Eaton Green Road</span><span>Luton LU2 9HB</span><span>01582 725193</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── services ───────── -->
+  <section class="services" id="services">
+    <div class="wrap">
+
+      <p class="section-title">
+        <span>I &nbsp;·&nbsp; In the chair</span>
+        <em>Services</em>
+      </p>
+
+      <div class="services__intro">
+        <h2 class="services__headline">A salon for the <em>cut you keep</em> coming back for.</h2>
+        <p class="services__copy">
+          Half a century in, our stylists know the difference between a fashion and a foundation. Bring a reference, bring a memory, bring nothing at all — we'll sit with it before we touch the scissors.
+        </p>
+      </div>
+
+      <ul class="menu" role="list">
+        <li><span class="num">01</span><span>Cuts &amp; styling</span><span class="dots"></span><span class="tag">All lengths</span></li>
+        <li><span class="num">02</span><span>Blow-dries</span><span class="dots"></span><span class="tag">Occasion · everyday</span></li>
+        <li><span class="num">03</span><span>Colour work</span><span class="dots"></span><span class="tag">Full · highlights</span></li>
+        <li><span class="num">04</span><span>Regrowth &amp; root touch-up</span><span class="dots"></span><span class="tag">Maintenance</span></li>
+      </ul>
+
+      <p class="menu__foot">
+        Pricing is set in consultation — every head is different. Call <a href="tel:+441582725193" style="border-bottom:1px solid var(--brass);text-decoration:none;padding-bottom:1px;">01582 725193</a> to talk it through or to book a chair.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ───────── story ───────── -->
+  <section class="story">
+    <div class="wrap">
+
+      <p class="section-title">
+        <span>II &nbsp;·&nbsp; Heritage</span>
+        <em>Est. 1973</em>
+      </p>
+
+      <div class="story__grid">
+
+        <div>
+          <p class="story__year">73<sup>est.</sup></p>
+          <p class="story__caption">Eaton Green Road · Luton</p>
+        </div>
+
+        <div>
+          <p class="story__body">
+            We've been on this stretch of Eaton Green Road since <em>1973</em> — back when the salon was new, the high street looked different, and a wash-and-set still booked weeks ahead. The shopfront has changed; the stylists have changed; the postcode hasn't. What stayed is the room: a working salon where you sit back, relax, and leave with the cut you came for.
+          </p>
+
+          <div class="story__notes">
+            <p><strong>Friendly &amp; talented</strong>Returning clients describe the team in the same two words across the years.</p>
+            <p><strong>Classics &amp; modern</strong>Trained in both the foundations and what's current — without the upsell.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ───────── visit ───────── -->
+  <section class="visit" id="visit">
+    <div class="wrap">
+
+      <p class="section-title">
+        <span>III &nbsp;·&nbsp; The salon</span>
+        <em>Visit</em>
+      </p>
+
+      <div class="visit__grid">
+
+        <div>
+          <h2 class="letterhead">
+            Harvey<span style="color:var(--brass-deep)">’</span>s of <span class="line-light">Eaton Green Road,</span><br>
+            Luton, LU2&nbsp;9HB.<br><br>
+            By appointment: <a href="tel:+441582725193">01582 725193</a><br>
+            Or write: <a href="mailto:harveyshairdressers@gmail.com">harveyshairdressers@gmail.com</a>
+          </h2>
+        </div>
+
+        <ul class="hours" id="hours" role="list">
+          <li class="closed"><span class="day">Sunday</span><span class="dots"></span><span class="time">Closed</span></li>
+          <li class="closed"><span class="day">Monday</span><span class="dots"></span><span class="time">Closed</span></li>
+          <li><span class="day">Tuesday</span><span class="dots"></span><span class="time">09:00 – 17:30</span></li>
+          <li><span class="day">Wednesday</span><span class="dots"></span><span class="time">09:00 – 17:30</span></li>
+          <li><span class="day">Thursday</span><span class="dots"></span><span class="time">09:30 – 19:00</span></li>
+          <li><span class="day">Friday</span><span class="dots"></span><span class="time">09:00 – 18:00</span></li>
+          <li><span class="day">Saturday</span><span class="dots"></span><span class="time">08:00 – 16:00</span></li>
+        </ul>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <p class="mark">Harvey<span style="color:var(--brass)">’</span>s <i>Est. 1973</i></p>
+      <p class="meta">
+        11 Eaton Green Road · Luton · LU2&nbsp;9HB &nbsp;·&nbsp;
+        <a href="tel:+441582725193">01582 725193</a> &nbsp;·&nbsp;
+        <a href="mailto:harveyshairdressers@gmail.com">harveyshairdressers@gmail.com</a>
+      </p>
+    </div>
+    <p class="meta">© Harvey's Hairdressers. Cutting in Luton since MCMLXXIII.</p>
+  </div>
+</footer>
+
+<script>
+  // open/closed pill + highlight today's row in the hours list.
+  // hours are Tue 09:00-17:30, Wed 09:00-17:30, Thu 09:30-19:00, Fri 09:00-18:00, Sat 08:00-16:00.
+  (function () {
+    const HOURS = {
+      0: null,                       // Sun closed
+      1: null,                       // Mon closed
+      2: [9 * 60, 17 * 60 + 30],     // Tue
+      3: [9 * 60, 17 * 60 + 30],     // Wed
+      4: [9 * 60 + 30, 19 * 60],     // Thu
+      5: [9 * 60, 18 * 60],          // Fri
+      6: [8 * 60, 16 * 60]           // Sat
+    };
+    const now = new Date();
+    const day = now.getDay();
+    const mins = now.getHours() * 60 + now.getMinutes();
+    const slot = HOURS[day];
+    const isOpen = slot && mins >= slot[0] && mins < slot[1];
+
+    const fmt = (m) => {
+      const h = Math.floor(m / 60), mm = m % 60;
+      return String(h).padStart(2, "0") + ":" + String(mm).padStart(2, "0");
+    };
+
+    const dot = document.getElementById("dot");
+    const status = document.getElementById("status");
+    if (dot && status) {
+      if (isOpen) {
+        dot.classList.add("is-open");
+        status.textContent = "Open until " + fmt(slot[1]);
+      } else {
+        // find next open day
+        let next = day, hops = 0;
+        while (hops < 7 && (!HOURS[(next + 1) % 7])) { next = (next + 1) % 7; hops++; }
+        next = (next + 1) % 7;
+        const names = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+        const nextLabel = (next === (day + 1) % 7) ? "tomorrow" : names[next];
+        const nextSlot = HOURS[next];
+        if (slot && mins < slot[0]) {
+          status.textContent = "Opens today at " + fmt(slot[0]);
+        } else if (nextSlot) {
+          status.textContent = "Opens " + nextLabel + " at " + fmt(nextSlot[0]);
+        } else {
+          status.textContent = "Eaton Green Road · LU2 9HB";
+        }
+      }
+    }
+
+    // highlight today's row in the hours list
+    const rows = document.querySelectorAll("#hours li");
+    if (rows.length === 7) rows[day].classList.add("today");
+  })();
+</script>
+
+</body>
+</html>
